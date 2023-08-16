@@ -1,0 +1,12 @@
+OUTPUT := output
+
+all: test jniset
+
+test:
+	g++ -std=c++11 -O2 src/test_hashset.cpp -o $(OUTPUT)/test_hashset -lpthread
+
+jniset:
+	g++ -std=c++11 -O2 -fPIC -shared -I "$(JAVA_HOME)/include" -I "$(JAVA_HOME)/include/win32" jni/c/JniFastSet.cpp -o $(OUTPUT)/libJniFastSet.dll	
+
+clean:
+	rm -f $(OUTPUT)/*

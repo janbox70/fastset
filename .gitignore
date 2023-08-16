@@ -1,0 +1,8 @@
+.vscode*
+.idea
+*.iml
+*.exe
+*.log
+output
+jni/test/fastset/target
+jni/java/fastset/target
